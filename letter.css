@@ -1,0 +1,139 @@
+.main-cont{
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 50vw;
+    max-width: 720px;
+    height: 45vh;
+    margin: 30vh auto;
+    background-color: rgb(243, 139, 156);
+    box-shadow: 1px 1px 0px #999,
+                2px 2px 0px #999,
+                3px 3px 0px #999,
+                4px 4px 0px #999,
+                5px 5px 0px #999,
+                6px 6px 0px #999;
+}
+
+@media only screen and (max-width: 900px ){
+    .main-cont {
+        width: 80vw;
+        height: 35vh;
+    }
+}
+
+.env-cont {
+    visibility: hidden;
+}
+.env-cont, .tri-cont {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.letter-thumb {
+    height: 90%;
+    width: 80%;
+    right: 10%;
+    bottom: 5%;
+    position: absolute;
+    background-color: rgb(224, 201, 166);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.letter-thumb-animate {
+    animation: pick 2s linear forwards ;
+}
+
+.env {
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin: auto;
+    background-color: transparent;
+    border-top: 22.5vh solid transparent;
+    border-left: min(25vw, 360px) solid rgb(64, 201, 255);
+    border-right: min(25vw, 360px) solid rgb(64, 201, 255);
+    border-bottom: 22.5vh solid black;
+    perspective: 1000px; 
+    position: absolute;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 900px ){
+    .env {
+        border-top: 17.5vh solid transparent;
+        border-left: 40vw solid rgb(64, 201, 255);
+        border-right: 40vw solid rgb(64, 201, 255);
+        border-bottom: 17.5vh solid black;
+    }
+}
+
+.cover{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transform-origin: 50% 0; /* Rotate around the center of the top edge */
+    
+}
+
+.cover-animate {
+    animation: open 3s linear forwards;
+}
+
+
+
+@keyframes flip{
+    from {transform: rotate3d(0, 1, 0, 0deg); /* Start with no rotation */
+        background-color: red;}
+    to {transform: rotate3d(0, 1, 0, 180deg);}
+}
+
+@keyframes open {
+    0% {
+        transform: rotateX(0deg); /* Rotate around the top edge */
+    }
+    100% {
+        transform: rotateX(180deg); /* Rotate back to the original position */
+    }
+}
+
+@keyframes pick {
+    0% {
+        transform: translateY(0); /* Rotate around the top edge */
+    }
+    100% {
+        transform: translateY(-60%); /* Rotate back to the original position */
+    }
+}
+
+.letter-cont {
+    display: none;
+    width: 100vw;
+}
+
+.letter {
+    margin: 5vh auto;
+    width: min(80%, 800px);
+    background-color: pink;
+    border-radius: 25px;
+    box-sizing: border-box;
+    padding: min(25px, 5%);
+    color: rgb(255, 255, 255);
+}
+
+@media only screen and (max-width: 600px ){
+    .letter {
+        width: 98%;
+    }
+}
+
+.wishes {
+    height: 100%;
+    width: 100%;
+    background-image: url("media/hb.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
